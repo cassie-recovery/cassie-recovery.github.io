@@ -1,0 +1,25 @@
+html
+
+---
+layout: default
+---
+<article class="post">
+	<header class="post-header">
+		{% if page.categories contains 'learn-in-public' %}
+			<a href="{{ '/learn-in-public/' | relative_url }}" class="back">← 返回 Learn in Public</a>
+		{% elsif page.categories contains 'build-in-public' %}
+			<a href="{{ '/build-in-public/' | relative_url }}" class="back">← 返回 Build in Public</a>
+		{% else %}
+			<a href="{{ '/' | relative_url }}" class="back">← 返回首页</a>
+		{% endif %}
+
+		<h1>{{ page.title }}</h1>
+		<time datetime="{{ page.date | date_to_xmlschema }}">
+			{{ page.date | date: "%Y 年 %m 月 %d 日" }}
+		</time>
+	</header>
+
+	<div class="post-content">
+		{{ content }}
+	</div>
+</article>

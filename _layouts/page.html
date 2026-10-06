@@ -1,0 +1,16 @@
+html
+
+---
+layout: default
+---
+<main class="page">
+	<header class="page-header">
+		<a href="{{ '/' | relative_url }}" class="back">← 返回首页</a>
+		<h1>{{ page.title }}</h1>
+		{% if page.subtitle %}
+			<p class="subtitle">{{ page.subtitle }}</p>
+		{% endif %}
+	</header>
+
+	{{ content }}
+</main>

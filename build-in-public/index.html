@@ -1,0 +1,18 @@
+html
+
+---
+layout: page
+title: Learn in Public
+subtitle: 项目记录、作品展示、构建过程。
+---
+
+<ul class="post-list">
+	{% for post in site.categories["build-in-public"] %}
+		<li>
+			<a href="{{ post.url | relative_url }}">
+				<span class="post-title">{{ post.title }}</span>
+				<span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+			</a>
+		</li>
+	{% endfor %}
+</ul>
